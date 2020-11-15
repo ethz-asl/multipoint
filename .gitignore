@@ -1,0 +1,13 @@
+*.py[cod]
+*$py.class
+*/__pycache__/
+.*
+*.egg-info*
+*.pyc
+*.png
+*.lsf
+*lsf*
+*.txt
+
+!.gitignore
+

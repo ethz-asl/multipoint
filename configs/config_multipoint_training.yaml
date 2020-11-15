@@ -1,0 +1,76 @@
+dataset:
+    type: 'ImagePairDataset'
+    filename: /tmp/training.hdf5
+    keypoints_filename: /tmp/labels.hdf5
+    single_image: false
+    height: 240
+    width: 320
+    augmentation:
+        photometric:
+            enable: false
+            primitives: [
+                'random_brightness', 'random_contrast', 'additive_speckle_noise',
+                'additive_gaussian_noise', 'additive_shade', 'motion_blur' ]
+            params:
+                random_brightness: {max_abs_change: 0.15}
+                random_contrast: {strength_range: [0.3, 1.8]}
+                additive_gaussian_noise: {stddev_range: [0, 0.06]}
+                additive_speckle_noise: {prob_range: [0, 0.0035]}
+                additive_shade:
+                    transparency_range: [-0.5, 0.8]
+                    kernel_size_range: [50, 100]
+                motion_blur: {max_kernel_size: 3}
+        homographic:
+            enable: true
+            params:
+                translation: true
+                rotation: true
+                scaling: true
+                perspective: true
+                scaling_amplitude: 0.2
+                perspective_amplitude_x: 0.2
+                perspective_amplitude_y: 0.2
+                patch_ratio: 0.85
+                max_angle: 1.57  # 3.14
+                allow_artifacts: true
+                translation_overflow: 0.05
+            valid_border_margin: 0
+            border_reflect: true
+
+model:
+    type: 'MultiPoint'
+    multispectral: true
+    descriptor_head: true
+    descriptor_size: 256
+    intepolation_mode: bilinear
+    normalize_descriptors: true
+    final_batchnorm: true
+    reflection_pad: true
+    bn_first: false
+
+loss:
+    type: 'SuperPointLoss'
+    detector_loss: true
+    detector_use_cross_entropy: true
+    descriptor_loss: true
+    descriptor_loss_threshold: 4.0
+    descriptor_loss_use_mask: true
+    sparse_descriptor_loss: false
+    sparse_descriptor_loss_num_cell_divisor: 64
+    positive_margin: 1.0
+    negative_margin: 0.2
+    lambda_d: 250
+    lambda: 1.0
+
+training:
+    n_epochs: 3000
+    learningrate: 1e-4
+    batchsize: 32
+    num_worker: 4
+    allow_gpu: true
+    use_writer: true
+    output_directory: '/tmp/superpoint'
+    save_every_n_epoch: 5
+    validation:
+        compute_validation_loss: false
+

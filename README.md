@@ -89,4 +89,6 @@ This work is presented in the the [following paper](https://corlconf.github.io/p
 
 
 ## Credits
+This research was funded by the [Microsoft Swiss Joint Research Center](https://www.microsoft.com/en-us/research/collaboration/swiss-joint-research-center/) under Project Altair: Infrared Vision and AI Decision-Making for Longer Drone Flights. 
+
 This code is based on previous implementations of SuperPoint by [Rémi Pautrat](https://github.com/rpautrat/SuperPoint) and  [You-Yi Jau](https://github.com/eric-yyjau/pytorch-superpoint)

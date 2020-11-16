@@ -75,5 +75,18 @@ Predicting the alignment of an image pair can be done using the `predict_align_i
 The resulting keypoints and matches can be visualized by adding the `-p` flag.
 The metrics over the full dataset are computed when adding the `-e` flag.
 
+## Citing
+This work is presented in the the [following paper](https://corlconf.github.io/paper_392/), please use this citation to cite our work:
+
+```bibtex
+@inproceedings{achermann2020multipoint,
+    author={Achermann, Florian and Kolobov, Andrey and Dey, Debadeepta and Hinzmann, Timo and Chung, Jen Jen and Siegwart, Roland and Lawrance, Nicholas},
+    title={{MultiPoint}: Cross-spectral registration of thermal and optical aerial imagery},
+    year={2020},
+    booktitle={Conference on Robot Learning (CoRL)},
+}
+```
+
+
 ## Credits
 This code is based on previous implementations of SuperPoint by [Rémi Pautrat](https://github.com/rpautrat/SuperPoint) and  [You-Yi Jau](https://github.com/eric-yyjau/pytorch-superpoint)

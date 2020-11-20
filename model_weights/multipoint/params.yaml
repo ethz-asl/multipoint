@@ -1,0 +1,11 @@
+model:
+  bn_first: false
+  descriptor_head: true
+  descriptor_size: 64
+  final_batchnorm: true
+  highres_descriptor: false
+  intepolation_mode: bilinear
+  multispectral: false
+  normalize_descriptors: true
+  reflection_pad: true
+  type: MultiPoint

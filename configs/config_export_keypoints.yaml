@@ -1,0 +1,36 @@
+dataset:
+    type: 'ImagePairDataset'
+    filename: /tmp/test.hdf5
+    single_image: False
+    augmentation:
+        photometric:
+            enable: false
+        homographic:
+            enable: false
+
+prediction:
+    allow_gpu: true
+    num_worker: 8
+    batchsize: 1
+    detection_threshold: 0.015
+    nms: 4
+    cpu_nms: true
+    topk: 0
+    homographic_adaptation:
+        num: 10
+        aggregation: 'prod'
+        erosion_radius: 3
+        mask_border: true
+        min_count: 5
+        filter_size: 0
+        homographies:
+            translation: true
+            rotation: true
+            scaling: true
+            perspective: true
+            scaling_amplitude: 0.2
+            perspective_amplitude_x: 0.2
+            perspective_amplitude_y: 0.2
+            patch_ratio: 0.85
+            max_angle: 1.57  # 3.14
+            allow_artifacts: true

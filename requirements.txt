@@ -1,0 +1,9 @@
+opencv-python==4.2.0.34
+h5py
+matplotlib
+numpy
+torch>=1.5
+torchvision
+pyyaml
+tqdm
+tensorboard

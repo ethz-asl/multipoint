@@ -26,6 +26,7 @@ The dataset can be downloaded by running (from the multipoint directory):
 python download_multipoint_data.py
 ```
 A different target directory can be specified with the `-d` flag, but please remember to update the configuration yaml files to point to the new location (or create symlinks).
+Force overwrite of existing files can be set with `-f` flag.
 Note that the files are quite large (over 36 GB total), so may take some time to download.
 
 ## Usage

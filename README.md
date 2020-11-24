@@ -19,7 +19,14 @@ pip3 install -e . --user
 (You can remove the `--user` flag if operating in a virtual environment)
 
 ## Dataset
-TODO
+The dataset is hosted at the [Autonomous systems lab dataset website](https://projects.asl.ethz.ch/datasets/doku.php?id=corl2020-multipoint). The page also provides some basic information about the data itself.
+
+The dataset can be downloaded by running (from the multipoint directory):
+```python
+python download_multipoint_data.py
+```
+A different target directory can be specified with the `-d` flag, but please remember to update the configuration yaml files to point to the new location (or create symlinks).
+Note that the files are quite large (over 36 GB total), so may take some time to download.
 
 ## Usage
 In the following section the scripts to train and visualize the results of MultiPoint are explained. For each script, additional help on the input paramaters and flags can be found using the `-h` flag (e.g. `python show_keypoints.py -h`).

@@ -1,6 +1,6 @@
 dataset:
     type: 'ImagePairDataset'
-    filename: /tmp/test.hdf5
+    filename: data/test.hdf5
     single_image: False
     augmentation:
         photometric:

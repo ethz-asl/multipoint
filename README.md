@@ -19,7 +19,7 @@ pip3 install -e . --user
 (You can remove the `--user` flag if operating in a virtual environment)
 
 ## Dataset
-The dataset is hosted at the [Autonomous systems lab dataset website](https://projects.asl.ethz.ch/datasets/doku.php?id=corl2020-multipoint). The page also provides some basic information about the data itself.
+The dataset is hosted at the [Autonomous Systems Lab dataset website](https://projects.asl.ethz.ch/datasets/doku.php?id=corl2020-multipoint). The page also provides some basic information about the data itself.
 
 The dataset can be downloaded by running (from the multipoint directory):
 ```python

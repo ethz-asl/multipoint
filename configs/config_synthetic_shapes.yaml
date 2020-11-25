@@ -62,7 +62,7 @@ training:
     num_worker: 4
     allow_gpu: true
     use_writer: true
-    output_directory: 'model_weights/superpoint'
+    output_directory: 'model_weights/multipoint-retrained'
     save_every_n_epoch: 5
     validation:
         compute_validation_loss: false

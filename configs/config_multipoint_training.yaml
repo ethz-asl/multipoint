@@ -1,7 +1,7 @@
 dataset:
     type: 'ImagePairDataset'
-    filename: /tmp/training.hdf5
-    keypoints_filename: /tmp/labels.hdf5
+    filename: data/training.hdf5
+    keypoints_filename: data/labels.hdf5
     single_image: false
     height: 240
     width: 320
@@ -69,7 +69,7 @@ training:
     num_worker: 4
     allow_gpu: true
     use_writer: true
-    output_directory: '/tmp/superpoint'
+    output_directory: 'model_weights/multipoint-retrained'
     save_every_n_epoch: 5
     validation:
         compute_validation_loss: false

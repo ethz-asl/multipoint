@@ -1,7 +1,7 @@
 dataset:
     type: 'ImagePairDataset'
-    filename: /tmp/training.hdf5
-    keypoints_filename: /tmp/labels.hdf5
+    filename: data/training.hdf5
+    keypoints_filename: data/labels_training.hdf5
     single_image: false
     height: -1
     width: -1

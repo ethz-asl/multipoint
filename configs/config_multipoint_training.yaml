@@ -3,11 +3,12 @@ dataset:
     filename: data/training.hdf5
     keypoints_filename: data/labels.hdf5
     single_image: false
+    random_pairs: true
     height: 240
     width: 320
     augmentation:
         photometric:
-            enable: false
+            enable: true
             primitives: [
                 'random_brightness', 'random_contrast', 'additive_speckle_noise',
                 'additive_gaussian_noise', 'additive_shade', 'motion_blur' ]
@@ -39,9 +40,9 @@ dataset:
 
 model:
     type: 'MultiPoint'
-    multispectral: true
+    multispectral: false
     descriptor_head: true
-    descriptor_size: 256
+    descriptor_size: 64
     intepolation_mode: bilinear
     normalize_descriptors: true
     final_batchnorm: true

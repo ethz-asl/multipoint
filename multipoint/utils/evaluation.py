@@ -24,7 +24,7 @@ def compute_detector_metrics(net, dataloader, device, config):
                            config['nms'],
                            config['detection_threshold'])
 
-        out = list(map(lambda p, k: compute_tp_fp_dist(p,k), pred.squeeze().cpu(), data['keypoints'].cpu()))
+        out = list(map(lambda p, k: compute_tp_fp_dist(p,k), pred[:,0].cpu(), data['keypoints'].cpu()))
 
         for item in out:
             tp.append(item[0].tolist())

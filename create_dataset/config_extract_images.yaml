@@ -1,0 +1,36 @@
+# ------------------------------------------------------------------
+# GENERAL SETTINGS
+# ------------------------------------------------------------------
+undistort_images : true
+compensate_exposure_time : true
+check_pose : false
+verbose : false
+save_preprocessed_images : true
+
+# ------------------------------------------------------------------
+# EXTRACT DATA FROM ROSBAG
+# ------------------------------------------------------------------
+rosbag/topic_optical_images : /image_republisher/rgb/image_raw
+rosbag/topic_optical_exposure : /image_republisher/rgb/exposure_time
+rosbag/topic_thermal_images : /image_republisher/ir/image_mono16
+rosbag/topic_pose : /mavros/local_position/pose # /mavros/global_position/local
+rosbag/start_time : 0 # rosbag playback start time [s]
+rosbag/end_time : 10000 # rosbag playback end time [s]
+rosbag/max_dt : 0.025 # maximum difference between images to be considered a pair [s]
+rosgab/thermal_dt : 0.0 # offset from thermal to optical image
+rosgab/filter_alpha : 0.05 
+rosbag/check_pose/max_dt : 0.05
+rosbag/check_pose/max_pitch : 10.0 # [deg]
+rosbag/check_pose/max_roll : 10.0 # [deg]
+rosbag/check_pose/pitch_offset : 2.0 # cruise pitch [deg]
+rosbag/purge_dt : 1.0 # [s]
+
+# ------------------------------------------------------------------
+# IMAGE SETTINGS
+# ------------------------------------------------------------------
+image/undistort_alpha : 0.0 # see cv2.getOptimalNewCameraMatrix
+image/calibration_params : calibration.yaml
+image/optical/downscale : true
+image/thermal/rotate : true
+image/thermal/rescale_outlier_rejection : true
+image/show_raw/dt : 20 # [ms], 0 disables showing the raw images

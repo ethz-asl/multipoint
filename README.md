@@ -29,6 +29,12 @@ A different target directory can be specified with the `-d` flag, but please rem
 Force overwrite of existing files can be set with `-f` flag.
 Note that the files are quite large (over 36 GB total), so may take some time to download.
 
+#### Dataset generation
+The `create_dataset` folder contains the utilities and scripts to create your own dataset from a ROS bagfile.
+
+First extract the images from the bagfile with the `extract_images.py` script. Then run the alignment by running `align_images.py` (don't forget to put an initial guess of the transformation to your dataset folder). You can check the quality of the aligned images and reject/accept samples with by executing `check_alignment.py`. The scripts can be configured with the corresponding yaml files.
+
+
 ## Usage
 In the following section the scripts to train and visualize the results of MultiPoint are explained. For each script, additional help on the input paramaters and flags can be found using the `-h` flag (e.g. `python show_keypoints.py -h`).
 

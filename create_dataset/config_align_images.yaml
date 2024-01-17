@@ -1,0 +1,37 @@
+# ------------------------------------------------------------------
+# GENERAL SETTINGS
+# ------------------------------------------------------------------
+alignment_method : mi
+verbose : false
+show_results : false
+save_aligned_images : true
+use_image_pyramid : false
+use_smoothing_stage : false
+perspective : true # affine transform not really tested anymore
+
+# ------------------------------------------------------------------
+# ALIGNMENT SETTINGS
+# ------------------------------------------------------------------
+alignment/process_every_nth_frame : 1
+alignment/run_optimization : true
+alignment/optimization_timeout : 60 # [s]
+alignment/use_multiprocess : true
+alignment/accept_init : true
+alignment/decomposed_transformation : false # only used for affine transformation
+alignment/filter_size : 5
+alignment/n_pyramid_levels : 2
+alignment/bin_sizes : [16, 32, 64, 100, 256]
+alignment/normalized_mi : true
+alignment/smoothing_sigma : 0
+alignment/ranking_method : 'order' # either 'sum' or 'order'
+alignment/check/invalid_pixels : true
+alignment/check/both/max_diff_mi : 0.5
+alignment/check/both/max_diff_dx : 30
+alignment/check/both/max_diff_dy : 15
+alignment/check/perspective/max_diff_dz : 0.5
+alignment/check/perspective/max_diff_roll : 0.5 # [deg]
+alignment/check/perspective/max_diff_pitch : 0.5 # [deg]
+alignment/check/perspective/max_diff_yaw : 0.5 # [deg]
+alignment/check/affine/max_diff_scale : 0.05
+alignment/check/affine/max_diff_rotation : 0.5 # [deg]
+alignment/check/affine/max_diff_shear : 0.5 # [deg]
